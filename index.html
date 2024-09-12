@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facebook Login</title>
+    <style type="text/css">
+        body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-box {
+    width: 360px;
+    padding: 40px;
+    position: relative;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.login-box h1 {
+    margin: 0 0 20px;
+    font-size: 36px;
+    color: #1877f2;
+    text-align: center;
+}
+
+.textbox {
+    margin-bottom: 20px;
+}
+
+.textbox input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+button {
+    width: 100%;
+    background: #1877f2;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #165eab;
+}
+
+.message {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.message a {
+    color: #1877f2;
+    text-decoration: none;
+}
+
+.message a:hover {
+    text-decoration: underline;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <h1>Facebook</h1>
+            <form id="login-form">
+                <div class="textbox">
+                    <input type="email" id="email" placeholder="Email" required>
+                </div>
+                <div class="textbox">
+                    <input type="password" id="password" placeholder="Password" required>
+                </div>
+                <button type="submit">Log In</button>
+            </form>
+            <p class="message">Don't have an account? <a href="#">Create one</a></p>
+        </div>
+    </div>
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    // Get form values
+    const email = document.getElementById('email').value;
+    const password = document.getElementById('password').value;
+
+    // Simple validation
+    if (email && password) {
+        alert('Logging in with:\nEmail: ' + email + '\nPassword: ' + password);
+        // You can handle actual login logic here
+        // For example, send the data to a server
+    } else {
+        alert('Please fill in all fields.');
+    }
+});
+
+    </script>
+</body>
+</html>
